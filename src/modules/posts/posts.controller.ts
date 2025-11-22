@@ -4,6 +4,15 @@ import { postsService } from "./posts.service";
 
 export const postsController = new Elysia({ prefix: "/posts" })
   .use(authMiddleware)
+  .get("/", async ({ user, set }: any) => {
+    try {
+      const posts = await postsService.getPosts(user);
+      return posts;
+    } catch (error: any) {
+      set.status = 500;
+      return { error: error.message };
+    }
+  })
   .post(
     "/",
     async ({ body, user, set }: any) => {

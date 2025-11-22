@@ -1,4 +1,5 @@
 import { db } from "../../db";
+import type { User } from "@prisma/client";
 
 export const postsService = {
   async createPost(
@@ -14,4 +15,12 @@ export const postsService = {
       },
     });
   },
+
+  async getPosts(user: User) {
+    return db.post.findMany({
+      where: {
+        authorId: user.id,
+      },
+    });
+  }
 };

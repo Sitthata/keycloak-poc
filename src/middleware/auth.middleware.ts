@@ -1,6 +1,7 @@
 import { Elysia } from "elysia";
 import { createRemoteJWKSet, jwtVerify } from "jose";
 import { db } from "../db";
+import type { User } from "@prisma/client";
 
 const KEYCLOAK_ISSUER =
   process.env.KEYCLOAK_ISSUER_URL ||
@@ -30,7 +31,7 @@ export const authMiddleware = (app: Elysia) =>
       }
 
       // Upsert user in local DB
-      const user = await db.user.upsert({
+      const user: User = await db.user.upsert({
         where: { keycloak_oid: sub },
         update: {
           email: payload.email as string,
