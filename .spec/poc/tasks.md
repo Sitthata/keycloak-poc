@@ -63,18 +63,18 @@ This document breaks down the implementation of the Keycloak POC into specific, 
 
 ## 3. Keycloak Configuration
 
-- [ ] 3.1. Run `docker-compose up -d` and verify the `keycloak` container starts.
-- [ ] 3.2. Access the Keycloak Admin Console at `http://localhost:8080` and log in with the admin credentials.
-- [ ] 3.3. **Create a new Realm**:
-    - [ ] Name it `murasaki-poc` (or as defined in `.env`).
-- [ ] 3.4. **Create a new Client**:
-    - [ ] Within the new realm, create a client with Client ID `elysia-backend`.
-    - [ ] Set "Client authentication" to `On`.
-    - [ ] Ensure "Standard flow" and "Direct access grants" are enabled.
-    - [ ] In the "Credentials" tab, copy the "Client secret" and add it to your `.env` file.
-- [ ] 3.5. **Create a Test User**:
-    - [ ] In the "Users" section, create a new user.
-    - [ ] Set a username (e.g., `testuser`).
+- [x] 3.1. Run `docker-compose up -d` and verify the `keycloak` container starts.
+- [x] 3.2. Access the Keycloak Admin Console at `http://localhost:8080` and log in with the admin credentials.
+- [x] 3.3. **Create a new Realm**:
+    - [x] Name it `murasaki-poc` (or as defined in `.env`).
+- [x] 3.4. **Create a new Client**:
+    - [x] Within the new realm, create a client with Client ID `elysia-backend`.
+    - [x] Set "Client authentication" to `On`.
+    - [x] Ensure "Standard flow" and "Direct access grants" are enabled.
+    - [x] In the "Credentials" tab, copy the "Client secret" and add it to your `.env` file.
+- [x] 3.5. **Create a Test User**:
+    - [x] In the "Users" section, create a new user.
+    - [x] Set a username (e.g., `testuser`).
     - [ ] In the "Credentials" tab, set a password for the user and mark it as non-temporary.
 
 ---
